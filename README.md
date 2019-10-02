@@ -28,7 +28,7 @@ class PriceFetcher
   end
 
   extend ExpiringMemoize
-  memoize :current_price, ttl: Float::INFINITY
+  memoize :current_price, ttl: 1 # second
 end
 
 fetcher = PriceFetcher.new
